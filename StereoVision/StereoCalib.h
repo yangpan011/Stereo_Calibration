@@ -2,6 +2,8 @@
 #define _STEREO_VISION_H_H
 #include "ImageProcess.h"
 #include "cv.h"
+#include <iostream>   
+#include <fstream>
 #include <vector>
 
 #include "opencv2/highgui/highgui.hpp"
@@ -119,6 +121,7 @@ public:
 
 	int detectCorners(cv::Size boardSize, vector<vector<Mat>>& image_seq, int& successImageNum, StereoCalib::CornerDatas& cornerDatas);
 
+	int CalCorrespondEpilinesErr(CornerDatas& cornerDatas,StereoParams stereoParams, vector<vector<Mat>> image_seq, int successImageNum, double& err_avr);
 };
 
 #endif

@@ -264,6 +264,102 @@ int StereoCalib::getStereoCalibrateError(CornerDatas& cornerDatas, StereoParams&
 	return 1;
 }
 
+int StereoCalib::CalCorrespondEpilinesErr(CornerDatas& cornerDatas,StereoParams stereoParams, vector<vector<Mat>> image_seq, int successImageNum, double& err_avr)
+{
+	int points_total = 0;// (# of points in the individual iamge) * (# of images)
+	vector<Point3f> lines[2]; //for the epipolar lines
+
+	Mat intrinsic_matrix_left = stereoParams.cameraParams1.cameraMatrix;
+	Mat distortion_coeffs_left = stereoParams.cameraParams1.distortionCoefficients;
+
+	Mat intrinsic_matrix_right = stereoParams.cameraParams2.cameraMatrix;
+	Mat distortion_coeffs_right = stereoParams.cameraParams2.distortionCoefficients;
+
+	cv::Mat F = stereoParams.foundational;
+	cv::Mat R = stereoParams.rotation;
+	cv::Mat T = stereoParams.translation;
+	Mat left;
+	Mat right;
+	for (int i = 0; i < successImageNum; i++)
+	{
+		string imageFileName;
+		std::stringstream StrStm;
+		StrStm << i + 1;
+		StrStm >> imageFileName;
+		imageFileName += ".bmp";
+
+		int npt = (int)cornerDatas.imagePoints1[i].size(); //# of points in the individual image
+
+		vector<Point2f> & point_left_temp = cornerDatas.imagePoints1[i];
+		undistortPoints(point_left_temp, point_left_temp,
+			intrinsic_matrix_left, distortion_coeffs_left,
+			Mat(), intrinsic_matrix_left);
+		computeCorrespondEpilines(point_left_temp, 0 + 1, F, lines[0]);
+		
+		vector<Point2f> & point_right_temp = cornerDatas.imagePoints2[i];
+		undistortPoints(point_right_temp, point_right_temp,
+			intrinsic_matrix_right, distortion_coeffs_right,
+			Mat(), intrinsic_matrix_right);
+		computeCorrespondEpilines(point_right_temp, 1 + 1, F, lines[1]);
+
+		/***********************************验证矫正系数*******************************************/
+		/*
+		imwrite("DistortRectify\\UnDistortRectify\\left\\" + imageFileName, image_seq[0][i]);
+		undistort(image_seq[0][i], left,
+			intrinsic_matrix_left, distortion_coeffs_left,
+			Mat());
+		imwrite("DistortRectify\\DistortRectify\\left\\" + imageFileName, left);
+
+		imwrite("DistortRectify\\UnDistortRectify\\right\\" + imageFileName, image_seq[1][i]);	
+		undistort(image_seq[1][i], right,
+			intrinsic_matrix_right, distortion_coeffs_right,
+			Mat());
+		imwrite("DistortRectify\\DistortRectify\\right\\" + imageFileName, right);
+		*/
+
+		for (int j = 0; j < npt; j++)
+		{
+			double err = fabs(point_left_temp[j].x * lines[1][j].x +
+				point_left_temp[j].y * lines[1][j].y + lines[1][j].z) +
+				fabs(point_right_temp[j].x * lines[0][j].x +
+				point_right_temp[j].y * lines[0][j].y + lines[0][j].z);
+			err_avr += err;
+		}
+		points_total += npt;
+	}
+
+	err_avr = err_avr / points_total;
+
+	std::cout << "average epipolar line error = " << err_avr << endl;
+
+	std::cout << "开始保存定标结果………………" << endl;
+
+	ofstream fout("F:\\caliberation_result.txt", ios::app);
+	fout << "Left Intrinsic Matrix:" << endl;
+	fout << intrinsic_matrix_left << endl;
+	fout << "Left DIstortion Coefficient" << endl;
+	fout << distortion_coeffs_left << endl;
+
+	fout << "Right Intrinsic Matrix:" << endl;
+	fout << intrinsic_matrix_right << endl;
+	fout << "Right DIstortion Coefficient" << endl;
+	fout << distortion_coeffs_right << endl;
+
+	fout << "Rotation Vector:" << endl;
+	fout << stereoParams.rotation << endl;
+	fout << "Translation Vector:" << endl;
+	fout << stereoParams.translation << endl;
+	// 	fout << "RMS Error:" << endl;
+	// 	fout << rms << endl;
+	fout << "Epipolar error:" << endl;
+	fout << err_avr << endl;
+	std::cout << "完成保存" << endl;
+	fout << endl;
+	fout.close();
+
+	return 0;
+}
+
 int StereoCalib::detectCorners(cv::Size boardSize, vector<vector<Mat>>& image_seq, int& successImageNum, StereoCalib::CornerDatas& cornerDatas)
 {
 	

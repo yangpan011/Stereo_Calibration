@@ -23,7 +23,6 @@ int main()
 	cv::Size boardSize(8, 8);  /****    定标板上每行、列的角点数       ****/
 	int successImageNum = 0;        /****   成功提取角点的棋盘图对数量   ****/
 	int nimages = 0; /****累加总的角点数*****/
-//	vector<vector<Mat>> image_seq(2,vector<Mat>(1));
 	vector<vector<Mat>> image_seq;
 	image_seq.resize(2, vector<Mat>());
 
@@ -40,85 +39,20 @@ int main()
 	stereoParams.cameraParams1.flags = CV_CALIB_FIX_PRINCIPAL_POINT;
 	stereoParams.cameraParams2.flags = CV_CALIB_FIX_PRINCIPAL_POINT;
 	stereoParams.flags = CV_CALIB_FIX_PRINCIPAL_POINT | CV_CALIB_USE_INTRINSIC_GUESS;
-	stereoParams.alpha = 0.5;
+	stereoParams.alpha = 1;
 
 	bool needCalibSingleCamera = 1;
 	strStereoCalib.calibrateStereoCamera(cornerDatas, stereoParams, needCalibSingleCamera);
-
-
-	Size imageSize(1280, 960);
+	
 	double err_avr = 0;
-	int points_total = 0;// (# of points in the individual iamge) * (# of images)
-	vector<Point3f> lines[2]; //for the epipolar lines
+	strStereoCalib.CalCorrespondEpilinesErr(cornerDatas, stereoParams, image_seq, successImageNum, err_avr);
+	
 
-	Mat intrinsic_matrix_left = stereoParams.cameraParams1.cameraMatrix;
-	Mat distortion_coeffs_left = stereoParams.cameraParams1.distortionCoefficients;
-
-	Mat intrinsic_matrix_right = stereoParams.cameraParams2.cameraMatrix;
-	Mat distortion_coeffs_right = stereoParams.cameraParams2.distortionCoefficients;
-
-	cv::Mat F = stereoParams.foundational;
-	cv::Mat R = stereoParams.rotation;
-	cv::Mat T = stereoParams.translation;
-	for (int i = 0; i < successImageNum; i++)
-	{
-		int npt = (int)cornerDatas.imagePoints1[i].size(); //# of points in the individual image
-
-		vector<Point2f> & point_left_temp = cornerDatas.imagePoints1[i];
-		undistortPoints(point_left_temp, point_left_temp,
-			intrinsic_matrix_left, distortion_coeffs_left,
-			Mat(), intrinsic_matrix_left);
-		computeCorrespondEpilines(point_left_temp, 0 + 1, F, lines[0]);
-
-		vector<Point2f> & point_right_temp = cornerDatas.imagePoints2[i];
-		undistortPoints(point_right_temp, point_right_temp,
-			intrinsic_matrix_right, distortion_coeffs_right,
-			Mat(), intrinsic_matrix_right);
-		computeCorrespondEpilines(point_right_temp, 1 + 1, F, lines[1]);
-
-		for (int j = 0; j < npt; j++)
-		{
-			double err = fabs(point_left_temp[j].x * lines[1][j].x +
-				point_left_temp[j].y * lines[1][j].y + lines[1][j].z) +
-				fabs(point_right_temp[j].x * lines[0][j].x +
-				point_right_temp[j].y * lines[0][j].y + lines[0][j].z);
-			err_avr += err;
-		}
-		points_total += npt;
-	}
-
-	err_avr = err_avr / points_total;
-
-	std::cout << "average epipolar line error = " << err_avr << endl;
-
-	std::cout << "开始保存定标结果………………" << endl;
-
-	ofstream fout("F:\\caliberation_result.txt", ios::app);
-	fout << "Left Intrinsic Matrix:" << endl;
-	fout << intrinsic_matrix_left << endl;
-	fout << "Left DIstortion Coefficient" << endl;
-	fout << distortion_coeffs_left << endl;
-
-	fout << "Right Intrinsic Matrix:" << endl;
-	fout << intrinsic_matrix_right << endl;
-	fout << "Right DIstortion Coefficient" << endl;
-	fout << distortion_coeffs_right << endl;
-
-	fout << "Rotation Vector:" << endl;
-	fout << stereoParams.rotation << endl;
-	fout << "Translation Vector:" << endl;
-	fout << stereoParams.translation << endl;
-// 	fout << "RMS Error:" << endl;
-// 	fout << rms << endl;
-	fout << "Epipolar error:" << endl;
-	fout << err_avr << endl;
-	std::cout << "完成保存" << endl;
-	fout << endl;
-	fout.close();
 
 	/************************************************************************
 	RECTIFICATION 06/02/2017
 	*************************************************************************/
+	/*
 	Mat R1, R2, P1, P2, Q,
 		map11, map12,
 		map21, map22;
@@ -139,11 +73,10 @@ int main()
 	remap(imageRect_left, imageRect_left, map11, map12, INTER_LINEAR);
 	remap(imageRect_right, imageRect_right, map21, map22, INTER_LINEAR);
 
+	//新增修改，验证git
 	imwrite("rect1.bmp", imageRect_left);
 	imwrite("rectr.bmp", imageRect_right);
-	/************************************************************************
-	保存定标结果
-	*************************************************************************/
+
 	bool bsaveYMLResult = 0;
 	if (bsaveYMLResult)
 	{
@@ -157,7 +90,7 @@ int main()
 		else
 			std::cout << "Error: can not save the Result\n";
 	}
-	
+	*/
 	
 	return 0;
 }

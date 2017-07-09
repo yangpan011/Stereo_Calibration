@@ -41,7 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Program Files %28x86%29\opencv2.0\opencv\build\include;D:\Program Files %28x86%29\opencv2.0\opencv\build\include\opencv;D:\Program Files %28x86%29\opencv2.0\opencv\build\include\opencv2;$(IncludePath)</IncludePath>
+    <IncludePath>D:\Program Files %28x86%29\opencv2.0\opencv\build\include;D:\Program Files %28x86%29\opencv2.0\opencv\build\include\opencv;D:\Program Files %28x86%29\opencv2.0\opencv\build\include\opencv2;D:\Program Files %28x86%29\opencv2.0\opencv\build\x86\vc12\bin;$(IncludePath)</IncludePath>
     <LibraryPath>D:\Program Files %28x86%29\opencv2.0\opencv\build\x86\vc12\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

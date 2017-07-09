@@ -1,64 +1,59 @@
-﻿生成启动时间为 2017/7/8 星期六 下午 1:37:09。
-     1>项目“E:\Code\TEST\StereoVision\StereoVision\StereoVision.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2017/7/9 18:55:08。
+     1>项目“E:\Code\git\Stereo_Calibration\StereoVision\StereoVision.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt StereoCalib.cpp main.cpp
-         main.cpp
-     1>d:\program files (x86)\opencv2.0\opencv\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : 参见“fopen”的声明
-     1>e:\code\test\stereovision\stereovision\main.cpp(223): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt StereoCalib.cpp
          StereoCalib.cpp
      1>d:\program files (x86)\opencv2.0\opencv\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  d:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : 参见“fopen”的声明
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(152): warning C4018: “<”: 有符号/无符号不匹配
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(478): warning C4101: “k”: 未引用的局部变量
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(478): warning C4101: “j”: 未引用的局部变量
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(512): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(515): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(516): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(525): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(527): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(528): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(536): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(538): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(539): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(547): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(549): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(550): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(558): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(560): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(561): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(569): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(571): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(572): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(580): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(582): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(583): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(590): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(593): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(594): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(607): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(610): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(611): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(620): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(622): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(623): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(631): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(633): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(634): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(642): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(644): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(645): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(653): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(656): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>e:\code\test\stereovision\stereovision\stereocalib.cpp(657): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-         正在生成代码...
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(152): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(572): warning C4101: “k”: 未引用的局部变量
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(572): warning C4101: “j”: 未引用的局部变量
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(606): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(609): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(610): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(619): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(621): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(622): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(630): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(632): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(633): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(641): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(643): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(644): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(652): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(654): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(655): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(663): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(665): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(666): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(674): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(676): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(677): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(684): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(687): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(688): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(701): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(704): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(705): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(714): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(716): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(717): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(725): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(727): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(728): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(736): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(738): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(739): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(747): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(750): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>e:\code\git\stereo_calibration\stereovision\stereocalib.cpp(751): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Code\TEST\StereoVision\Debug\StereoVision.exe" /INCREMENTAL /NOLOGO opencv_calib3d2410d.lib opencv_contrib2410d.lib opencv_core2410d.lib opencv_features2d2410d.lib opencv_flann2410d.lib opencv_gpu2410d.lib opencv_highgui2410d.lib opencv_imgproc2410d.lib opencv_legacy2410d.lib opencv_ml2410d.lib opencv_nonfree2410d.lib opencv_objdetect2410d.lib opencv_ocl2410d.lib opencv_photo2410d.lib opencv_stitching2410d.lib opencv_superres2410d.lib opencv_ts2410d.lib opencv_video2410d.lib opencv_videostab2410d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Code\TEST\StereoVision\Debug\StereoVision.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Code\TEST\StereoVision\Debug\StereoVision.lib" /MACHINE:X86 Debug\ImageProcess.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Code\git\Stereo_Calibration\Debug\StereoVision.exe" /INCREMENTAL /NOLOGO opencv_calib3d2410d.lib opencv_contrib2410d.lib opencv_core2410d.lib opencv_features2d2410d.lib opencv_flann2410d.lib opencv_gpu2410d.lib opencv_highgui2410d.lib opencv_imgproc2410d.lib opencv_legacy2410d.lib opencv_ml2410d.lib opencv_nonfree2410d.lib opencv_objdetect2410d.lib opencv_ocl2410d.lib opencv_photo2410d.lib opencv_stitching2410d.lib opencv_superres2410d.lib opencv_ts2410d.lib opencv_video2410d.lib opencv_videostab2410d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Code\git\Stereo_Calibration\Debug\StereoVision.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Code\git\Stereo_Calibration\Debug\StereoVision.lib" /MACHINE:X86 Debug\ImageProcess.obj
          Debug\main.obj
          Debug\StereoCalib.obj
-         StereoVision.vcxproj -> E:\Code\TEST\StereoVision\Debug\StereoVision.exe
-     1>已完成生成项目“E:\Code\TEST\StereoVision\StereoVision\StereoVision.vcxproj”(Build 个目标)的操作。
+         StereoVision.vcxproj -> E:\Code\git\Stereo_Calibration\Debug\StereoVision.exe
+     1>已完成生成项目“E:\Code\git\Stereo_Calibration\StereoVision\StereoVision.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:04.77
+已用时间 00:00:02.01
